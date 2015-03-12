@@ -483,6 +483,14 @@
            */
           callbacks.dragEnd = function (event) {
           };
+          
+          /**
+           * Invoked before the drag stopped.
+           *
+           * @param event - the event object.
+           */
+          callbacks.beforeDragEnd = function(event){
+          };
 
           //Set the sortOptions callbacks else set it to default.
           scope.$watch(attrs.asSortable, function (newVal, oldVal) {
@@ -893,6 +901,11 @@
               return;
             }
             event.preventDefault();
+            
+            scope.sortableScope.$apply(function () {
+              scope.callbacks.beforeDragEnd(dragItemInfo.eventArgs());
+            });
+            
             if (dragElement) {
               //rollback all the changes.
               rollbackDragChanges();
