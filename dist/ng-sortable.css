@@ -3,23 +3,30 @@
 /* ************************************** */
 
 .as-sortable-item {
-    -ms-touch-action: none;
-    touch-action: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  border: none;
 }
 
 .as-sortable-item-handle {
-    cursor: move;
+  cursor: move;
 }
 
 .as-sortable-placeholder {
 }
 
 .as-sortable-drag {
-    position: absolute;
-    pointer-events: none;
-    z-index: 9999;
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+  padding: 0; 
 }
 
 .as-sortable-hidden {
-    display: none !important;
+  display: none !important;
+}
+
+/* remove gap at the top between drag placeholder and selected item */
+.as-sortable-drag .as-sortable-item {
+	margin: 0;
 }
