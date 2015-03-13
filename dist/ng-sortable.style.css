@@ -8,8 +8,14 @@
     border-radius: 10px;
 }
 
+
+/* remove gap at the top between drag placeholder and selected item */
+.as-sortable-drag .as-sortable-item {
+	margin: 0;
+}
+
 .as-sortable-item {
-    border: solid 1px darkgrey;
+    border: none; 
     background-color: #ffffff;
 }
 
@@ -24,6 +30,7 @@
 
 .as-sortable-drag {
     opacity: .8;
+    padding: 0; /* remove gap from the sides between drag placeholder and selected item */
 }
 
 .as-sortable-hidden {
