@@ -604,7 +604,8 @@
           * @param event - the event object.
           */
           dragListen = function (event) {
-
+            dragStart(event);
+            
             var unbindMoveListen = function () {
               angular.element($document).unbind('mousemove', moveListen);
               angular.element($document).unbind('touchmove', moveListen);
@@ -622,7 +623,6 @@
               }
               if (Math.abs(eventObj.clientX - startPosition.clientX) + Math.abs(eventObj.clientY - startPosition.clientY) > 10) {
                 unbindMoveListen();
-                dragStart(event);
               }
             };
             
